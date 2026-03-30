@@ -1,6 +1,6 @@
-# RetailPulse — End-to-End Retail Analytics Platform
+# RetailPulse: End-to-End Retail Analytics Platform
 
-> A complete retail merchandise analytics pipeline built on the modern enterprise data stack. Simulates how a merchandise planning team tracks store performance, inventory health, and category trends — from raw data ingestion to executive dashboards.
+> A complete retail merchandise analytics pipeline built on the modern enterprise data stack. Simulates how a merchandise planning team tracks store performance, inventory health, and category trends from raw data ingestion to executive dashboards.
 
 ---
 
@@ -36,7 +36,7 @@ Power BI Dashboard
 
 | Layer | Tool | Purpose |
 |---|---|---|
-| Storage | Azure Data Lake Storage Gen2 | Raw file landing zone — untouched source of truth |
+| Storage | Azure Data Lake Storage Gen2 | Raw file landing zone untouched source of truth |
 | Processing | Azure Databricks | Medallion architecture, Delta Lake, SQL transformation |
 | Format | Delta Lake | ACID transactions, time travel, schema enforcement |
 | Organization | Unity Catalog | 3-level governance: catalog.schema.table |
@@ -71,7 +71,7 @@ Power BI Dashboard
 
 ## Business Metrics Built from Scratch
 
-All 6 metrics are calculated once in the Silver layer. Gold views aggregate — they never recalculate.
+All 6 metrics are calculated once in the Silver layer. Gold views aggregate, they never recalculate.
 
 | Metric | Formula | What It Tells You |
 |---|---|---|
@@ -115,13 +115,13 @@ Stockout_Count         = CALCULATE(COUNTROWS(...), exception_flag = "Stockout")
 
 ## Key Business Insight
 
-**A 30% average sell-through rate with near-zero forecast variance indicates an allocation problem — not a demand problem.**
+**A 30% average sell-through rate with near-zero forecast variance indicates an allocation problem, not a demand problem.**
 
 When stores are selling roughly what was planned (low forecast variance) but only clearing 30% of available inventory (low sell-through), the issue is not that customers aren't buying. The issue is that the right products are being sent to the wrong stores. Reallocating slow-moving inventory from underperforming stores to high sell-through stores before season end reduces markdown exposure and protects margin.
 
 ---
 
-## AI/BI Genie — Natural Language Queries
+## AI/BI Genie: Natural Language Queries
 
 A Genie Space is configured on all 3 gold views. Sample questions:
 
